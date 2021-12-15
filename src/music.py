@@ -9,7 +9,7 @@ class MusicWindow(QMainWindow):
 	def __init__(self):
 		super().__init__()
 		self.setWindowTitle("Media Player")
-		self.currentFile = '/BadHabits.mp3'
+		self.currentFile = '/badhabits.mp3'
 		self.currentPlaylist = QMediaPlaylist()
 		self.player = QMediaPlayer()
 		self.userAction = -1			#0- stopped, 1- playing 2-paused
@@ -17,7 +17,7 @@ class MusicWindow(QMainWindow):
 		self.player.stateChanged.connect(self.qmp_stateChanged)
 		self.player.positionChanged.connect(self.qmp_positionChanged)
 		self.player.volumeChanged.connect(self.qmp_volumeChanged)
-		self.player.setVolume(60)
+		self.player.setVolume(100)
 		#Add Status bar
 		self.statusBar().showMessage('No Media :: %d'%self.player.volume())
 		self.homeScreen()

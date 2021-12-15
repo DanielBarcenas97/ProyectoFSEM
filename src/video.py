@@ -11,25 +11,20 @@ from PyQt5.QtWidgets import QMainWindow, QWidget, QPushButton, QAction
 from PyQt5.QtGui import QIcon
 
 
-
 class VideoWindow(QMainWindow):
-    """A simple Media Player using VLC and Qt
-    """
+    #A simple media player using VLC and Qt
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Video Player")
-
         # creating a basic vlc instance
         self.instance = vlc.Instance()
         # creating an empty vlc media player
         self.mediaplayer = self.instance.media_player_new()
-
         self.createUI()
         self.isPaused = False
 
     def createUI(self):
-        """Set up the user interface, signals & slots
-        """
+        #Set up the user interface, signals & slots
         self.widget = QtWidgets.QWidget(self)
         self.setCentralWidget(self.widget)
 
@@ -40,8 +35,7 @@ class VideoWindow(QMainWindow):
         #     self.videoframe = QtWidgets.QFrame()
         self.videoframe = QtWidgets.QFrame()
         self.palette = self.videoframe.palette()
-        self.palette.setColor (QtGui.QPalette.Window,
-                               QtGui.QColor(0,0,0))
+        self.palette.setColor (QtGui.QPalette.Window,QtGui.QColor(0,0,0))
         self.videoframe.setPalette(self.palette)
         self.videoframe.setAutoFillBackground(True)
 
@@ -91,8 +85,7 @@ class VideoWindow(QMainWindow):
         self.timer.timeout.connect(self.updateUI)
 
     def PlayPause(self):
-        """Toggle play/pause status
-        """
+        #Toggle play/pause status
         if self.mediaplayer.is_playing():
             self.mediaplayer.pause()
             self.playbutton.setText("Play")
@@ -107,14 +100,12 @@ class VideoWindow(QMainWindow):
             self.isPaused = False
 
     def Stop(self):
-        """Stop player
-        """
+        #Stop player
         self.mediaplayer.stop()
         self.playbutton.setText("Play")
 
     def OpenFile(self, filename=None):
-        """Open a media file in a MediaPlayer
-        """
+        #Open a media file in a MediaPlayer
         if filename is None or filename is False:
             print("Attempt to openup OpenFile")
             filenameraw = QtWidgets.QFileDialog.getOpenFileName(self, "Open File", os.path.expanduser('~'))
@@ -129,12 +120,10 @@ class VideoWindow(QMainWindow):
         self.media = self.instance.media_new(filename)
         # put the media in the media player
         self.mediaplayer.set_media(self.media)
-
         # parse the metadata of the file
         self.media.parse()
         # set the title of the track as window title
         self.setWindowTitle(self.media.get_meta(0))
-
         # the media player has to be 'connected' to the QFrame
         # (otherwise a video would be displayed in it's own window)
         # this is platform specific!
@@ -149,13 +138,11 @@ class VideoWindow(QMainWindow):
         self.PlayPause()
 
     def setVolume(self, Volume):
-        """Set the volume
-        """
+        #Set the volume
         self.mediaplayer.audio_set_volume(Volume)
 
     def setPosition(self, position):
-        """Set the position
-        """
+        #Set the position
         # setting the position to where the slider was dragged
         self.mediaplayer.set_position(position / 1000.0)
         # the vlc MediaPlayer needs a float value between 0 and 1, Qt
@@ -164,7 +151,7 @@ class VideoWindow(QMainWindow):
         # (1000 should be enough)
 
     def updateUI(self):
-        """updates the user interface"""
+        #updates the user interface
         # setting the slider to the desired position
         self.positionslider.setValue(self.mediaplayer.get_position() * 1000)
 

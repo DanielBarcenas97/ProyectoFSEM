@@ -48,7 +48,6 @@ class DisplayImage(QWidget):
 
     def update_display_image(self, path_to_image=''):
         self.assigned_img_full_path = path_to_image
-
         ## render the display image when a thumbnail is selected
         self.on_main_window_resize()
 
@@ -56,16 +55,13 @@ class DisplayImage(QWidget):
         main_window_size = self.parent.size()
         main_window_height = main_window_size.height()
         main_window_width = main_window_size.width()
-
         display_image_max_height = main_window_height - 50
         display_image_max_width = main_window_width - 200
-
         self.pixmap = QPixmap(self.assigned_img_full_path)
         self.pixmap = self.pixmap.scaled(\
             QSize(display_image_max_width, display_image_max_height), \
             Qt.KeepAspectRatio, \
             Qt.SmoothTransformation)
-
         self.label.setPixmap(self.pixmap)
 
 
