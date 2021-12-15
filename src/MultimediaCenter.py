@@ -43,6 +43,10 @@ class MainWindow(QMainWindow):
         self.addToolBar(Qt.LeftToolBarArea,tb2)
 
         #adding shortcut links of popular websites
+        nx_btn = QAction(QIcon("iconos/google.png"), "Netflix", self)
+        nx_btn.setStatusTip("Go to Google")
+        nx_btn.triggered.connect(lambda: self.conn("http://www.google.com"))
+        tb2.addAction(nx_btn)
 
         nx_btn = QAction(QIcon("iconos/netflix.png"), "Netflix", self)
         nx_btn.setStatusTip("Go to Netflix")
@@ -74,6 +78,11 @@ class MainWindow(QMainWindow):
         msn_btn.triggered.connect(lambda: self.conn("https://www.blim.com/cuenta/ingresar"))
         tb2.addAction(msn_btn)
 
+        msn_btn = QAction(QIcon("iconos/youtube.png"), "Youtube", self)
+        msn_btn.setStatusTip("Go to Youtube")
+        msn_btn.triggered.connect(lambda: self.conn("https://music.youtube.com/"))
+        tb2.addAction(msn_btn)
+
         msn_btn = QAction(QIcon("iconos/spoti.png"), "Spotify", self)
         msn_btn.setStatusTip("Go to Spotify")
         msn_btn.triggered.connect(lambda: self.conn("https://open.spotify.com/"))
@@ -87,11 +96,6 @@ class MainWindow(QMainWindow):
         msn_btn = QAction(QIcon("iconos/itunes.png"), "iTunes", self)
         msn_btn.setStatusTip("Go to iTunes")
         msn_btn.triggered.connect(lambda: self.conn("https://www.apple.com/mx/itunes/"))
-        tb2.addAction(msn_btn)
-
-        msn_btn = QAction(QIcon("iconos/youtube.png"), "Youtube", self)
-        msn_btn.setStatusTip("Go to Youtube")
-        msn_btn.triggered.connect(lambda: self.conn("https://music.youtube.com/"))
         tb2.addAction(msn_btn)
 
         msn_btn = QAction(QIcon("iconos/cloudflare.png"), "Cloudflare", self)
