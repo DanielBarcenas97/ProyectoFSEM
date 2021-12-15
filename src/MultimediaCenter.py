@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
         ib_btn.triggered.connect(lambda: self.conn("https://www.disneyplus.com/es-mx/"))
         tb2.addAction(ib_btn)
 
-        ib_btn = QAction(QIcon("iconos/primevideo.png"), "Amazon Prime Video", self)
+        ib_btn = QAction(QIcon("iconos/prime.png"), "Amazon Prime Video", self)
         ib_btn.setStatusTip("Go to Amazon Prime Video")
         ib_btn.triggered.connect(lambda: self.conn("https://www.primevideo.com/"))
         tb2.addAction(ib_btn)
@@ -68,7 +68,7 @@ class MainWindow(QMainWindow):
         ib_btn.setStatusTip("Go to Star Plus")
         ib_btn.triggered.connect(lambda: self.conn("https://www.starplus.com/es-mx"))
         tb2.addAction(ib_btn)
-        
+
         msn_btn = QAction(QIcon("iconos/blim.png"), "Blim", self)
         msn_btn.setStatusTip("Go to Blim")
         msn_btn.triggered.connect(lambda: self.conn("https://www.blim.com/cuenta/ingresar"))
