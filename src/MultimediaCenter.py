@@ -49,7 +49,7 @@ class MainWindow(QMainWindow):
         nx_btn.triggered.connect(lambda: self.conn("http://www.netflix.com/mx-en/"))
         tb2.addAction(nx_btn)
 
-        ib_btn = QAction(QIcon("iconos/hbo.png"), "HBO GO", self)
+        ib_btn = QAction(QIcon("iconos/hbo.png"), "HBO MAX", self)
         ib_btn.setStatusTip("Go to HBO") 
         ib_btn.triggered.connect(lambda: self.conn("https://www.hbomax.com/mx/es"))      
         tb2.addAction(ib_btn)
@@ -64,6 +64,11 @@ class MainWindow(QMainWindow):
         ib_btn.triggered.connect(lambda: self.conn("https://www.primevideo.com/"))
         tb2.addAction(ib_btn)
 
+        ib_btn = QAction(QIcon("iconos/starplus.png"),"Star Plus", self)
+        ib_btn.setStatusTip("Go to Star Plus")
+        ib_btn.triggered.connect(lambda: self.conn("https://www.starplus.com/es-mx"))
+        tb2.addAction(ib_btn)
+        
         msn_btn = QAction(QIcon("iconos/blim.png"), "Blim", self)
         msn_btn.setStatusTip("Go to Blim")
         msn_btn.triggered.connect(lambda: self.conn("https://www.blim.com/cuenta/ingresar"))
