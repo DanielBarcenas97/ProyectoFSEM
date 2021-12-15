@@ -3,12 +3,12 @@
 ### Fundamentos de Sistemas Embebidos  
 Usa Python 3.73 y la libreria PyQt5
 
-#Integrantes:
-*Barcenas Martinez Edgar Daniel
-*Garcia Reyes Saúl Michel
-*Hernández Rodríguez Alejandro
+###Integrantes:
+    Barcenas Martinez Edgar Daniel
+    Garcia Reyes Saúl Michel
+    Hernández Rodríguez Alejandro
 
-Setup the project:
+##Setup the project:
 ### Update Raspbian Package 
     sudo apt-get update
     sudo apt-get upgrade
