@@ -125,9 +125,9 @@ C) Configuración de Git (información personal : nombre de confirmación y dire
   <img src="https://user-images.githubusercontent.com/95458811/146444118-69761f03-ea63-4188-963c-725e7b7120b0.jpeg" width="450" alt="Sublime's custom image"/>
 </p>
 
-D) Descarga del repostorio del proyecto.
+D) Descarga del repositorio del proyecto.
 
--> Ingresó a la carpeta o ubicación donde se exportara el repostorio (para este ejemplo la carpeta de nombre "FSEM") y descarga del mismo con el comando "git clone" seguido de la dirección https del proyecto.
+-> Ingréso a la carpeta o ubicación donde se exportara el repositorio (para este ejemplo la carpeta de nombre "FSEM") y descarga del mismo con el comando "git clone" seguido de la dirección https del proyecto.
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/95458811/146445338-f6f37af6-371d-40d9-9726-6664731e79e7.jpeg" width="400" alt="Sublime's custom image"/>
