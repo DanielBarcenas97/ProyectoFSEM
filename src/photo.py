@@ -1,3 +1,18 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# ## ###############################################
+#
+# photo.py
+# Proyecto final : Centro Multimedia (centro de entretenimiento para la reproducción de películas, videos, música, y fotografías).
+#
+# Autores:
+# Martínez Bárcenas Edgar Daniel
+# García Reyes Saúl Michel
+# Rodríguez Hernández Alejandro
+# License: MIT
+#
+# ## ###############################################
+
 import sys
 import os
 from os import listdir
